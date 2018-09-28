@@ -10,6 +10,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatTableModule, MatPaginatorModule, MatSortModule } from "@angular/material";
+import { DataTableComponent } from './data-table/data-table.component' ;
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { HttpClientModule }    from '@angular/common/http';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    DataTableComponent    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,12 @@ import { HttpClientModule }    from '@angular/common/http';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
